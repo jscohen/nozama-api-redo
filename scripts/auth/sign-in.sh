@@ -1,8 +1,8 @@
 #!/bin/bash
-
 API="http://localhost:4741"
 URL_PATH="/sign-in"
-
+EMAIL=test
+PASSWORD=test
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \
@@ -13,5 +13,4 @@ curl "${API}${URL_PATH}" \
       "password": "'"${PASSWORD}"'"
     }
   }'
-
 echo
