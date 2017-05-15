@@ -1,8 +1,9 @@
 #!/bin/bash
 API="http://localhost:4741"
 URL_PATH="/sign-in"
-EMAIL=test
-PASSWORD=test
+EMAIL="deedee.forte@yahoo.com"
+PASSWORD="gosox"
+
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \
