@@ -45,7 +45,7 @@ const orderSchema = new mongoose.Schema({
   },
   products: [{
     sku: {
-      type: Number,
+      type: String,
       required: true
     },
     quantity: {
