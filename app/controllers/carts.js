@@ -7,6 +7,7 @@ const Cart = models.cart
 const authenticate = require('./concerns/authenticate')
 const setUser = require('./concerns/set-current-user')
 const setModel = require('./concerns/set-mongoose-model')
+const lodash = require('lodash')
 
 const index = (req, res, next) => {
   Cart.find()
@@ -37,8 +38,16 @@ const create = (req, res, next) => {
 }
 
 const update = (req, res, next) => {
-  console.log(req.headers.action)
+  console.log(req.cart.products)
+  console.log(req.body.cart.products)
   delete req.body._owner  // disallow owner reassignment.
+
+  for (let i = 0; i < req.cart.products.length; i++) {
+    if (lodash.isEqual(req.cart.products[i].sku, req.body.cart.products[0].sku) && req.headers.action === 'add') {
+      res.sendStatus(404)
+      return
+    }
+  }
   // let skus = []
   // for (let i = 0; i < req.body.products.length; i++) {
   //   let thisSku = req.body.products[i].sku
@@ -57,7 +66,6 @@ const update = (req, res, next) => {
       .then(() => res.sendStatus(204))
       .catch(next)
   }
-  console.log(req.cart)
 }
 
 const destroy = (req, res, next) => {
