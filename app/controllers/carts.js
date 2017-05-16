@@ -48,15 +48,6 @@ const update = (req, res, next) => {
       return
     }
   }
-  // let skus = []
-  // for (let i = 0; i < req.body.products.length; i++) {
-  //   let thisSku = req.body.products[i].sku
-  //   skus.push(thisSku)
-  // }
-  //
-  // Product.find()
-  // req.cart.products.push(req.body.cart.products[0])
-  // console.log(req.cart.products)
   if (req.headers.action === 'add') {
     req.cart.update({'$push': {products: req.body.cart.products[0]}})
       .then(() => res.sendStatus(200))
@@ -66,18 +57,16 @@ const update = (req, res, next) => {
       .then(() => res.sendStatus(204))
       .catch(next)
   } else if (req.headers.action === 'addQuantity') {
-    // req.cart.update({'products.sku': req.body.cart.products[0].sku},
-    // {'$set': {'products.$.quantity': req.body.cart.products[0].quantity}})
-    // .then(() => res.sendStatus(200))
-    // .catch(next)
-    req.cart.update({'products.sku': req.body.cart.products[0].sku}, {$set: {'products.$.quantity': req.body.cart.products[0].quantity}})
-    .then(() => res.sendStatus(200))
-    .catch(next)
-
-    console.log(req.cart)
-  } else {
-    return false
   }
+  console.log(req.body.cart.products[0].sku)
+  console.log(req.body.cart.products[0].quantity)
+  req.cart.update({'products.sku': req.body.cart.products[0].sku}, {'$set': {'products.$.quantity': req.body.cart.products[0].quantity}})
+  .then(() => res.sendStatus(200))
+  .catch(next)
+
+  // console.log(id)
+
+  console.log(req.cart)
 }
 
 const destroy = (req, res, next) => {
