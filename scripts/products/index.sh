@@ -5,6 +5,7 @@ URL_PATH="/products"
 
 curl "${API}${URL_PATH}" \
   --include \
-  --request GET
+  --request GET\
+  --header "category: Meat"
 
 echo

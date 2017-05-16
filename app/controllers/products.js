@@ -9,12 +9,21 @@ const setUser = require('./concerns/set-current-user')
 const setModel = require('./concerns/set-mongoose-model')
 
 const index = (req, res, next) => {
-  Product.find()
+  if (req.headers.category === 1) {
+    Product.find({category: req.headers.category})
     .then(products => res.json({
       products: products.map((e) =>
         e.toJSON({ user: req.user }))
     }))
     .catch(next)
+  } else {
+    Product.find()
+    .then(products => res.json({
+      products: products.map((e) =>
+        e.toJSON({ user: req.user }))
+    }))
+    .catch(next)
+  }
 }
 
 const show = (req, res) => {
