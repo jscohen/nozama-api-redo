@@ -11,6 +11,7 @@ module.exports = require('lib/wiring/routes')
 .resources('examples')
 .resources('orders', { only: ['index', 'show', 'create'] })
 .resources('carts')
+.resources('products', { only: ['index', 'show'] })
 
 // users of the app have special requirements
 .post('/sign-up', 'users#signup')
