@@ -37,6 +37,7 @@ const create = (req, res, next) => {
 }
 
 const update = (req, res, next) => {
+  console.log(req)
   delete req.body._owner  // disallow owner reassignment.
   req.cart.update(req.body.cart)
     .then(() => res.sendStatus(204))
