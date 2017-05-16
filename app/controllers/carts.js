@@ -37,8 +37,7 @@ const create = (req, res, next) => {
 }
 
 const update = (req, res, next) => {
-  console.log(req.body.cart.products)
-  console.log(req.cart.products)
+  console.log(req.headers.action)
   delete req.body._owner  // disallow owner reassignment.
   // let skus = []
   // for (let i = 0; i < req.body.products.length; i++) {
@@ -49,7 +48,7 @@ const update = (req, res, next) => {
   // Product.find()
   // req.cart.products.push(req.body.cart.products[0])
   // console.log(req.cart.products)
-  if (req.body.cart.addOrDelete) {
+  if (req.headers.action === 'add') {
     req.cart.update({'$push': {products: req.body.cart.products[0]}})
       .then(() => res.sendStatus(200))
       .catch(next)
@@ -58,8 +57,7 @@ const update = (req, res, next) => {
       .then(() => res.sendStatus(204))
       .catch(next)
   }
-    // .then(() => res.sendStatus(204))
-    // .catch(next)
+  console.log(req.cart)
 }
 
 const destroy = (req, res, next) => {

@@ -10,12 +10,15 @@ curl "${API}${URL_PATH}/${ID}" \
   --request PATCH \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
+  --header "Action: remove" \
   --data '{
     "cart": {
       "products": [{
-        "sku": "M000001"
-      }],
-      "addOrDelete": false
+        "sku": "8",
+        "quantity": "2",
+        "name": "Book",
+        "price": "8"
+      }]
     }
   }'
 

@@ -13,9 +13,6 @@ const cartSchema = new mongoose.Schema({
   totalPrice: {
     type: Number
   },
-  addOrDelete: {
-    type: Boolean
-  },
   products: [{
     sku: {type: String},
     quantity: {type: Number},
