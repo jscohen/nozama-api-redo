@@ -2,26 +2,19 @@
 
 API="http://localhost:4741"
 URL_PATH="/carts"
-TOKEN="6/tNZj8NdNylH/tcEJH1urA6Fgvakx+q4euruBq2XB8=--AetSPKCy9ZVp1tONuvAyVLbBR6czdYgd9u1eI8/610E="
-OWNERID="591a1170519ff5b86f9182a7"
+TOKEN="URgRC5JxmaTkU51OfobZpYaecfwfoDFKx1RNkXQex2E=--tgFGFfZk9SnD0JSBNLir/y9YqZs6sWBYl+3tlIrLiIs="
+ID="591b20ff6fa5f2264b8771ef"
 
-curl "${API}${URL_PATH}" \
+curl "${API}${URL_PATH}/${ID}" \
   --include \
-  --request POST \
+  --request PATCH \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "cart": {
       "products": [{
-        "sku": "2",
-        "quantity": "2",
-        "name": "Book",
-        "price": "5"
-      },
-      {
-        "sku": "M0000001"
-      }],
-      "_owner": "'"${OWNERID}"'"
+        "sku": "M000001"
+      }]
     }
   }'
 

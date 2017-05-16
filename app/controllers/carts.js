@@ -3,6 +3,7 @@
 const controller = require('lib/wiring/controller')
 const models = require('app/models')
 const Cart = models.cart
+const Product = models.product
 
 const authenticate = require('./concerns/authenticate')
 const setUser = require('./concerns/set-current-user')
@@ -37,11 +38,24 @@ const create = (req, res, next) => {
 }
 
 const update = (req, res, next) => {
-  console.log(req)
+  console.log(req.body.cart.products)
+  console.log(req.cart.products)
   delete req.body._owner  // disallow owner reassignment.
-  req.cart.update(req.body.cart)
+  // let skus = []
+  // for (let i = 0; i < req.body.products.length; i++) {
+  //   let thisSku = req.body.products[i].sku
+  //   skus.push(thisSku)
+  // }
+  //
+  // Product.find()
+  // req.cart.products.push(req.body.cart.products[0])
+  // console.log(req.cart.products)
+
+  req.cart.update({'$push': {products: req.body.cart.products[0]}})
     .then(() => res.sendStatus(204))
     .catch(next)
+    // .then(() => res.sendStatus(204))
+    // .catch(next)
 }
 
 const destroy = (req, res, next) => {
