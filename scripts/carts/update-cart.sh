@@ -14,7 +14,8 @@ curl "${API}${URL_PATH}/${ID}" \
     "cart": {
       "products": [{
         "sku": "M000001"
-      }]
+      }],
+      "addOrDelete": false
     }
   }'
 

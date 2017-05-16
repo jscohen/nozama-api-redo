@@ -3,7 +3,6 @@
 const controller = require('lib/wiring/controller')
 const models = require('app/models')
 const Cart = models.cart
-const Product = models.product
 
 const authenticate = require('./concerns/authenticate')
 const setUser = require('./concerns/set-current-user')
@@ -50,10 +49,15 @@ const update = (req, res, next) => {
   // Product.find()
   // req.cart.products.push(req.body.cart.products[0])
   // console.log(req.cart.products)
-
-  req.cart.update({'$push': {products: req.body.cart.products[0]}})
-    .then(() => res.sendStatus(204))
-    .catch(next)
+  if (req.body.cart.addOrDelete) {
+    req.cart.update({'$push': {products: req.body.cart.products[0]}})
+      .then(() => res.sendStatus(200))
+      .catch(next)
+  } else {
+    req.cart.update({'$pull': {products: req.body.cart.products[0]}})
+      .then(() => res.sendStatus(204))
+      .catch(next)
+  }
     // .then(() => res.sendStatus(204))
     // .catch(next)
 }
