@@ -61,10 +61,22 @@ const update = (req, res, next) => {
     req.cart.update({'$push': {products: req.body.cart.products[0]}})
       .then(() => res.sendStatus(200))
       .catch(next)
-  } else {
+  } else if (req.headers.action === 'remove') {
     req.cart.update({'$pull': {products: req.body.cart.products[0]}})
       .then(() => res.sendStatus(204))
       .catch(next)
+  } else if (req.headers.action === 'addQuantity') {
+    // req.cart.update({'products.sku': req.body.cart.products[0].sku},
+    // {'$set': {'products.$.quantity': req.body.cart.products[0].quantity}})
+    // .then(() => res.sendStatus(200))
+    // .catch(next)
+    req.cart.update({'products.sku': req.body.cart.products[0].sku}, {$set: {'products.$.quantity': req.body.cart.products[0].quantity}})
+    .then(() => res.sendStatus(200))
+    .catch(next)
+
+    console.log(req.cart)
+  } else {
+    return false
   }
 }
 
