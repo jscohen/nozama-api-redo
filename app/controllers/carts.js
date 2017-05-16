@@ -43,11 +43,18 @@ const update = (req, res, next) => {
     .catch(next)
 }
 
+const destroy = (req, res, next) => {
+  req.cart.remove()
+    .then(() => res.sendStatus(204))
+    .catch(next)
+}
+
 module.exports = controller({
   index,
   show,
   create,
-  update
+  update,
+  destroy
 }, { before: [
   { method: setUser, only: ['index', 'show'] },
   { method: authenticate, except: ['index', 'show'] },
