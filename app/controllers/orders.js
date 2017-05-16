@@ -2,14 +2,14 @@
 
 const controller = require('lib/wiring/controller')
 const models = require('app/models')
-const Orders = models.order
+const Order = models.order
 
 const authenticate = require('./concerns/authenticate')
 const setUser = require('./concerns/set-current-user')
 const setModel = require('./concerns/set-mongoose-model')
 
 const index = (req, res, next) => {
-  Orders.find()
+  Order.find()
     .then(orders => res.json({
       orders: orders.map((e) =>
         e.toJSON({ user: req.user }))
@@ -27,7 +27,7 @@ const create = (req, res, next) => {
   const order = Object.assign(req.body.order, {
     _owner: req.user._id
   })
-  Orders.create(order)
+  Order.create(order)
     .then(order =>
       res.status(201)
         .json({
@@ -43,5 +43,5 @@ module.exports = controller({
 }, { before: [
   { method: setUser, only: ['index', 'show'] },
   { method: authenticate, only: ['create'] },
-  { method: setModel(Orders), only: ['show'] }
+  { method: setModel(Order), only: ['show'] }
 ] })
