@@ -60,7 +60,9 @@ const update = (req, res, next) => {
   }
   console.log(req.body.cart.products[0].sku)
   console.log(req.body.cart.products[0].quantity)
-  req.cart.update({'products.sku': req.body.cart.products[0].sku}, {'$set': {'products.$.quantity': req.body.cart.products[0].quantity}})
+  console.log(req.cart.products[0].sku)
+  const sku = (req.body.cart.products[0].sku)
+  req.cart.update({'products.sku': {'$eq': sku}}, {'$set': {'products.$.quantity': req.body.cart.products[0].quantity}})
   .then(() => res.sendStatus(200))
   .catch(next)
 
