@@ -48,11 +48,11 @@ const update = (req, res, next) => {
   }
   if (req.headers.action === 'add') {
     req.cart.update({'$push': {products: req.body.cart.products[0]}})
-      .then(() => res.sendStatus(200))
+      .then((carts) => res.sendStatus(201))
       .catch(next)
   } else if (req.headers.action === 'remove') {
     req.cart.update({'$pull': {products: req.body.cart.products[0]}})
-      .then(() => res.sendStatus(204))
+      .then((carts) => res.sendStatus(204))
       .catch(next)
   } else if (req.headers.action === 'addQuantity') {
   }
