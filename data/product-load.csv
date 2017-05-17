@@ -1,10 +1,40 @@
 name,inventory,price,description,sku,image,brand,category,subcategory
-Beef Brisket,,2000,10lb Beef Brisket. Prime cut. Go ahead and win that BBQ competition with this perfect hunk of beef,M0000001,,Beef Bros,Meat,Beef
-Pork Butt,,1500,8lb Pork Butt. Make the most amazing pulled pork with this perfect pork butt. ,M0000002,,Pork'n Pork,Meat,Pork
-Italian Sausages,,500,6 sausages,M0000003,,Pork'n Pork,Meat,Sausage
-Ground Beef,,500,1lb 85% ground beef,M0000004,,Beef Bros,Meat,Beef
-Hot Dog,,600,"6 delicious franks, ready for grilling.",M0000005,,Pork'n Pork,Meat,Sausage
-Beef Ribs,,1300,6 giant beef ribs. Smoke these suckers!,M0000006,,Beef Bros,Meat,Beef
-Frozen Turkey,,2000,17lb frozen turkey from Buncha Turkeys farms in northern wherever.,M0000007,,Buncha Turkeys,Meat,Poultry
-Bratwurst,,500,6 brats. Bring these to your next block party and be the hero.,M0000008,,Pork'n Pork,Meat,Sausage
-Boneless Chicken Breast,,600,2lb organic chicken breast. Might not actually be organic.,M0000009,,Perdont,Meat,Poultry
+Beef Brisket,50,2000,10lb Beef Brisket. Prime cut. Go ahead and win that BBQ competition with this perfect hunk of beef,M0000001,http://d2nwzygg3x0bhb.cloudfront.net/product-images/beefbrisket.jpeg,Beef Bros,Meat,Beef
+Pork Butt,50,1500,8lb Pork Butt. Make the most amazing pulled pork with this perfect pork butt. ,M0000002,http://d2nwzygg3x0bhb.cloudfront.net/product-images/porkbutt.jpg,Pork'n Pork,Meat,Pork
+Italian Sausages,50,500,6 sausages,M0000003,http://d2nwzygg3x0bhb.cloudfront.net/product-images/Italian_sausage_on_the_grill.jpg,Pork'n Pork,Meat,Sausage
+Ground Beef,50,500,1lb 85% ground beef,M0000004,http://d2nwzygg3x0bhb.cloudfront.net/product-images/ground_beef.jpg,Beef Bros,Meat,Beef
+Hot Dog,50,600,"6 delicious franks, ready for grilling.",M0000005,http://d2nwzygg3x0bhb.cloudfront.net/product-images/hotdog.jpg,Pork'n Pork,Meat,Sausage
+Beef Ribs,50,1300,6 giant beef ribs. Smoke these suckers!,M0000006,http://d2nwzygg3x0bhb.cloudfront.net/product-images/beef_rib.jpg,Beef Bros,Meat,Beef
+Frozen Turkey,50,2000,17lb frozen turkey from Buncha Turkeys farms in northern wherever.,M0000007,http://d2nwzygg3x0bhb.cloudfront.net/product-images/frozenturkey.jpg,Buncha Turkeys,Meat,Poultry
+Bratwurst,50,500,6 brats. Bring these to your next block party and be the hero.,M0000008,http://d2nwzygg3x0bhb.cloudfront.net/product-images/bratwurst.jpg,Pork'n Pork,Meat,Sausage
+Boneless Chicken Breast,50,600,2lb organic chicken breast. Might not actually be organic.,M0000009,http://d2nwzygg3x0bhb.cloudfront.net/product-images/chicken.jpg,Perdont,Meat,Poultry
+Barn Jacket,10,7900,"Lightweight yet warm, with special details like corduroy trim at the collar and cuffs.",A0000001,http://d2nwzygg3x0bhb.cloudfront.net/product-images/A01-Barn-Coat.jpeg,J Crew,Apparel,Outerwear
+Original Relaxed Fit Cap,20,2400,Internal wicking headband to keep you cool and dry. Adjustable snapback for great fit.,A0000002,http://d2nwzygg3x0bhb.cloudfront.net/product-images/A02-Addidas-Hat.jpg,Adidas,Apparel,Hat
+Stadium Hoodie,30,4998,"Made for comfort, breathability and warmth.",A0000003,http://d2nwzygg3x0bhb.cloudfront.net/product-images/A03-Addidas-Hoodie.jpg,Adidas,Apparel,Hoodie
+Crewneck Sweater,40,6900,This women's hunting sweater features the same proven design and construction of our legendary men's sweater.,A0000004,http://d2nwzygg3x0bhb.cloudfront.net/product-images/A04-Sweater.jpeg,LLBean,Apparel,Sweater
+New perfect-fit T-shirt in stripe,50,2950,"The perfect-fit T-shirt you love, now with longer sleeves so it's even more, well, perfect.",A0000005,http://d2nwzygg3x0bhb.cloudfront.net/product-images/A05-Striped-Top.jpeg,J Crew,Apparel,Shirt
+Tie-strap dress in polka dot,60,11000,The little black (polka dot!) dress...with ties at the shoulders for a fun take.,A0000006,http://d2nwzygg3x0bhb.cloudfront.net/product-images/A06-Dress.jpeg,J Crew,Apparel,Dress
+Wrap T-shirt,70,4250,"The T-shirt, 2.0, thanks to a wraparound tie waist.",A0000007,http://d2nwzygg3x0bhb.cloudfront.net/product-images/A07-Wrap-Tshirt.jpeg,J Crew,Apparel,Shirt
+Trail Model Rain Jacket,80,8900,"Zip on this women’s fleece-lined raincoat from our classic, best-value rainwear line for the perfect amount of waterproof warmth on rainy, chilly days",A0000008,http://d2nwzygg3x0bhb.cloudfront.net/product-images/A08-RainCoat.jpeg,LLBean,Apparel,Outerwear
+Premium Double L Polo,90,2995,"This women’s slightly fitted polo shirt is crafted to be worn season after season in a long-lasting, high-quality fabric.",A0000009,http://d2nwzygg3x0bhb.cloudfront.net/product-images/A09-llbean-TShirt.jpeg,LLBean,Apparel,Shirt
+Run Fast Hoody,100,4200,"Long sleeve Nike top features raglan sleeves for ease of movement, and a Swoosh design trademark at the left chest.",A0000010,http://d2nwzygg3x0bhb.cloudfront.net/product-images/A10-Nike-Hoodie.jpg,Nike,Apparel,Hoodie
+Salvatore Ferragomo,,80000,"Salvatoe Ferragomo Men's 'F-80' Swiss Quartz Stainless Steel and Leather Casual Watch, color: Black (Model: FAZ0016)",W0000001,http://d2nwzygg3x0bhb.cloudfront.net/product-images/Mavado+.jpg,Salvatore Ferragomo,Watch,Luxury Men's Watch
+CT Scuderia,,130000,"CT Scuderia Men's 'Fibra di Carboni' Swiss Quartz Stainless Steel and Leather Casual Watch, color: Black (Model: CS10158)",W0000002,http://d2nwzygg3x0bhb.cloudfront.net/product-images/CT+Scuderia+.jpg,CT Scuderia,Watch,Luxury Men's Watch
+Mavado,,70000,"Movado Men's Swiss Quartz Stainless Steel and Leather Casual Watch, color: blue (Model: 3600403)",W0000003,http://d2nwzygg3x0bhb.cloudfront.net/product-images/Mavado+.jpg,Mavado,Watch,Luxury Men's Watch
+GV2 by Gevril,,100000,"GV2 by Gevril Men's 'MotorCycle Sport' Automaic Stainless Steel and Leather Casual Watch, color: Blue (Model: 1301)",W0000004,http://d2nwzygg3x0bhb.cloudfront.net/product-images/GV2+by+Gevril.jpg,Gevril,Watch,Luxury Men's Watch
+Invicta,,30000,Invicta Men's 6051 Venom Reserve Black Stainless Steel Watch with Polyurethane Band,W0000005,http://d2nwzygg3x0bhb.cloudfront.net/product-images/Invicta+.jpg,Invicta,Watch,Luxury Men's Watch
+Bulova,,50000,Bulova Men's Special GRAMMY Edition Precisionist Watch,W0000006,http://d2nwzygg3x0bhb.cloudfront.net/product-images/Bulova.jpg,Bulova,Watch,Luxury Men's Watch
+Gucci,,140000,Gucci Swiss Quartz Metal and Alloy Dress Black Men's Watch (model: YA126269),W0000007,http://d2nwzygg3x0bhb.cloudfront.net/product-images/Gucci.jpg,Gucci,Watch,Luxury Men's Watch
+Gevril,,100000,Gevril Men's 3110 Seacloud Analog Display Automatic Self Wind Black Watch,W0000008,http://d2nwzygg3x0bhb.cloudfront.net/product-images/Gevril.jpg,Gevril,Watch,Luxury Men's Watch
+Versace,,60000,"Versace Men's 'V-Race' Automatic Stainless Steel Causal Watch, color: Black (model: VAL010016)",W0000009,http://d2nwzygg3x0bhb.cloudfront.net/product-images/Versace+.jpg,Versace,Watch,Luxury Men's Watch
+Alpina,,150000,Alpina Men's AL-760SB5Q6 Alpiner 4 Manufacture Analog Display Automatic Self Wind Black Watch,W0000010,http://d2nwzygg3x0bhb.cloudfront.net/product-images/Alpina.jpg,Alpina,Watch,Luxury Men's Watch
+Lord of the Rings,10,3000,Epic Fantasy Novel for Nerd,B0000001,http://d2nwzygg3x0bhb.cloudfront.net/product-images/lotr.jpg,Penguin,Book,Novel
+Salem's Lot,15,1000,It's Pretty Scary,B0000002,http://d2nwzygg3x0bhb.cloudfront.net/product-images/salemslot.jpg,Random House,Book,Novel
+Good and Evil,5,2000,Serious.  Very serious.,B0000003,http://d2nwzygg3x0bhb.cloudfront.net/product-images/good_and_evil.jpg,Penguin,Book,Nonfiction
+The Handmaid's Tale,30,1500,Creepy and now on TV,B0000004,http://d2nwzygg3x0bhb.cloudfront.net/product-images/handmaid.jpg,Random House,Book,Novel
+Coding for Dummies,1000,3000,Essential for all GA students,B0000005,http://d2nwzygg3x0bhb.cloudfront.net/product-images/codingdummies.jpg,Penguin,Book,Nonfiction
+The Growth Mindset,40,1500,It's what we do,B0000006,http://d2nwzygg3x0bhb.cloudfront.net/product-images/growthmindset.jpg,Penguin,Book,Nonfiction
+The Dark Tower,50,3000,Epic Stephen King FTW,B0000007,http://d2nwzygg3x0bhb.cloudfront.net/product-images/darktower.jpg,Random House,Book,Novel
+Hidden Figures,40,2000,Super cool!,B0000008,http://d2nwzygg3x0bhb.cloudfront.net/product-images/hiddenfigures.jpg,Penguin,Book,Nonfiction
+The Giver,100,1000,Creepy and good for schoolkids,B0000009,http://d2nwzygg3x0bhb.cloudfront.net/product-images/giver.jpg,Random House,Book,Novel
+Caturday,50,2000,I just like the name,B0000010,http://d2nwzygg3x0bhb.cloudfront.net/product-images/caturday.jpg,Penguin,Book,Novel
