@@ -38,8 +38,6 @@ const create = (req, res, next) => {
 }
 
 const update = (req, res, next) => {
-  console.log(req.cart.products)
-  console.log(req.body.cart.products)
   delete req.body._owner  // disallow owner reassignment.
 
   for (let i = 0; i < req.cart.products.length; i++) {
@@ -58,13 +56,13 @@ const update = (req, res, next) => {
       .catch(next)
   } else if (req.headers.action === 'addQuantity') {
   }
-  console.log(req.body.cart.products[0].sku)
-  console.log(req.body.cart.products[0].quantity)
-  console.log(req.cart.products[0].sku)
-  const sku = (req.body.cart.products[0].sku)
-  req.cart.update({'products.sku': {'$eq': sku}}, {'$set': {'products.$.quantity': req.body.cart.products[0].quantity}})
-  .then(() => res.sendStatus(200))
-  .catch(next)
+  // console.log(req.body.cart.products[0].sku)
+  // console.log(req.body.cart.products[0].quantity)
+  // console.log(req.cart.products[0].sku)
+  // const sku = (req.body.cart.products[0].sku)
+  // req.cart.update({'products.sku': {'$eq': sku}}, {'$set': {'products.$.quantity': req.body.cart.products[0].quantity}})
+  // .then(() => res.sendStatus(200))
+  // .catch(next)
 
   // console.log(id)
 
