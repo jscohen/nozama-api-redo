@@ -55,10 +55,11 @@ const update = (req, res, next) => {
       .then((carts) => res.sendStatus(204))
       .catch(next)
   } else if (req.headers.action === 'changeQuantity') {
-    req.cart.update({'$pull': {products: {_id: req.body.cart.products[0]._id}}})
-    req.cart.update({'$push': {products: req.body.cart.products[0]}})
-    .then((carts) => res.sendStatus(204))
-    .catch(next)
+    req.cart.update({'$pull': {products: {sku: req.body.cart.products[0].sku}}})
+    .then(req.cart.update({'$push': {products: req.body.cart.products[0]}}).then(
+      res.sendStatus(201))).catch(next)
+    // req.cart.update({'$push': {products: req.body.cart.products[0]}})
+    res.sendStatus(204)
   }
   // console.log(req.body.cart.products[0].sku)
   // console.log(req.body.cart.products[0].quantity)

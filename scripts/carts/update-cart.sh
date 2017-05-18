@@ -2,20 +2,23 @@
 
 API="http://localhost:4741"
 URL_PATH="/carts"
-TOKEN="DBMQnDlPwOPrVSXcE5Rn32l9vjrxJVCKm6GG+U2/Obs=--EPq524lCe2brHiKlyJ8ScpXz6+XOrgBp5Z8q2IJ2IfA="
-ID="591b58bd7152bd38e18619af"
+TOKEN="+8cPPtBogqsKnrAonjNTXx+7YR71xRr5BioTMEYTtpg=--cbDbL32ZpSeeqqMaqjoWxbyLWR5qYcbrYkrXN2NV2ZY="
+ID="591da77973e4f0585e59fbe6"
 
 curl "${API}${URL_PATH}/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
-  --header "Action: addQuantity" \
+  --header "Action: changeQuantity" \
   --data '{
     "cart": {
+      "totalPrice": "5",
       "products": [{
-        "quantity": "8",
-        "sku": "5"
+        "sku": "5",
+        "quantity": "3",
+        "name": "Book",
+        "price": "5"
       }]
     }
   }'
