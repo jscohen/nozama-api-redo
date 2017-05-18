@@ -47,7 +47,7 @@ const update = (req, res, next) => {
     }
   }
   if (req.headers.action === 'add') {
-    req.cart.update({'$push': {products: req.body.cart.products[0]}})
+    req.cart.update({'$push': {products: req.body.cart.products[0]}, '$set': {'totalPrice': req.body.cart.totalPrice}})
       .then((carts) => res.sendStatus(201))
       .catch(next)
   } else if (req.headers.action === 'remove') {
