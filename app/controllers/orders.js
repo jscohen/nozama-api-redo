@@ -26,7 +26,6 @@ const show = (req, res) => {
 }
 
 const create = (req, res, next) => {
-  console.log(req.body.order)
   const paymentToken = req.headers.paymentToken
   const totalPrice = req.body.order.totalPrice
   stripe(totalPrice, paymentToken)

@@ -18,7 +18,6 @@ const index = (req, res, next) => {
   if (req.header('subcategory')) {
     query.subcategory = req.header('subcategory')
   }
-  console.log(query);
   Product.find(query)
     .then(products => res.json({
       products: products.map((e) =>

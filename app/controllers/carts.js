@@ -55,21 +55,13 @@ const update = (req, res, next) => {
       .then((carts) => res.sendStatus(204))
       .catch(next)
   }
-  // console.log(req.body.cart.products[0].sku)
-  // console.log(req.body.cart.products[0].quantity)
-  // console.log(req.cart.products[0].sku)
   // const sku = (req.body.cart.products[0].sku)
   // req.cart.update({'products.sku': {'$eq': sku}}, {'$set': {'products.$.quantity': req.body.cart.products[0].quantity}})
   // .then(() => res.sendStatus(200))
   // .catch(next)
-
-  // console.log(id)
-
-  console.log(req.cart)
 }
 
 const destroy = (req, res, next) => {
-  console.log(req.cart)
   req.cart.remove()
     .then(() => res.sendStatus(204))
     .catch(next)
