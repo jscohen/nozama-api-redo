@@ -51,7 +51,7 @@ const update = (req, res, next) => {
       .then((carts) => res.sendStatus(201))
       .catch(next)
   } else if (req.headers.action === 'remove') {
-    req.cart.update({'$pull': {products: req.body.cart.products[0]}})
+    req.cart.update({'$pull': {products: req.body.cart.products[0]}, '$set': {'totalPrice': req.body.cart.totalPrice}})
       .then((carts) => res.sendStatus(204))
       .catch(next)
   } else if (req.headers.action === 'changeQuantity') {
