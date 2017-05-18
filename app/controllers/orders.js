@@ -11,7 +11,7 @@ const setModel = require('./concerns/set-mongoose-model')
 const stripe = require('lib/stripe-charge')
 
 const index = (req, res, next) => {
-  Order.find()
+  Order.find({_owner: req.user._id})
     .then(orders => res.json({
       orders: orders.map((e) =>
         e.toJSON({ user: req.user }))
