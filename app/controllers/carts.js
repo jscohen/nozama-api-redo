@@ -70,6 +70,7 @@ const update = (req, res, next) => {
 }
 
 const destroy = (req, res, next) => {
+  console.log(req.cart)
   req.cart.remove()
     .then(() => res.sendStatus(204))
     .catch(next)
