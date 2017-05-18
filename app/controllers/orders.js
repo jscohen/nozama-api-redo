@@ -47,6 +47,6 @@ module.exports = controller({
   create
 }, { before: [
   { method: setUser, only: ['index', 'show'] },
-  { method: authenticate, only: ['create'] },
+  { method: authenticate, only: ['create','index', 'show'] },
   { method: setModel(Order), only: ['show'] }
 ] })
