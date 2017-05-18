@@ -29,19 +29,9 @@ const orderSchema = new mongoose.Schema({
       required: true
     }
   },
-  paymentDetails: {
-    cardType: {
-      type: String,
-      required: true
-    },
-    transID: {
-      type: Number,
-      required: true
-    },
-    totalPrice: {
-      type: Number,
-      required: true
-    }
+  totalPrice: {
+    type: Number,
+    required: true
   },
   products: [{
     sku: {
