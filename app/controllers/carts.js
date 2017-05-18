@@ -51,10 +51,14 @@ const update = (req, res, next) => {
       .then((carts) => res.sendStatus(201))
       .catch(next)
   } else if (req.headers.action === 'remove') {
-    req.cart.update({'$pull': {products: req.body.cart.products[0]}})
+    req.cart.update({'$pull': {products: {_id: req.body.cart.products[0]._id}}})
       .then((carts) => res.sendStatus(204))
       .catch(next)
-  } else if (req.headers.action === 'addQuantity') {
+  } else if (req.headers.action === 'changeQuantity') {
+    req.cart.update({'$pull': {products: {_id: req.body.cart.products[0]._id}}})
+    req.cart.update({'$push': {products: req.body.cart.products[0]}})
+    .then((carts) => res.sendStatus(204))
+    .catch(next)
   }
   // console.log(req.body.cart.products[0].sku)
   // console.log(req.body.cart.products[0].quantity)
