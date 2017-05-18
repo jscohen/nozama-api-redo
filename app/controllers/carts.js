@@ -60,6 +60,8 @@ const update = (req, res, next) => {
       res.sendStatus(201))).catch(next)
     // req.cart.update({'$push': {products: req.body.cart.products[0]}})
     res.sendStatus(204)
+  } else if (req.headers.action === 'updatePrice') {
+    req.cart.update({'$set': {totalPrice: req.body.cart.totalPrice}}).then(res.sendStatus(200)).catch(next)
   }
   // console.log(req.body.cart.products[0].sku)
   // console.log(req.body.cart.products[0].quantity)
