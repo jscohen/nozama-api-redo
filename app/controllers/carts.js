@@ -51,7 +51,7 @@ const update = (req, res, next) => {
       .then((carts) => res.sendStatus(201))
       .catch(next)
   } else if (req.headers.action === 'remove') {
-    req.cart.update({'$pull': {products: {_id: req.body.cart.products[0]._id}}})
+    req.cart.update({'$pull': {products: req.body.cart.products[0]}})
       .then((carts) => res.sendStatus(204))
       .catch(next)
   } else if (req.headers.action === 'changeQuantity') {
@@ -87,8 +87,8 @@ module.exports = controller({
   update,
   destroy
 }, { before: [
-  { method: setUser, only: ['index', 'create', 'show', 'destroy'] },
-  { method: authenticate, except: ['index', 'show', 'create', 'destroy'] },
+  { method: setUser, only: ['index', 'show'] },
+  { method: authenticate, except: ['index', 'show'] },
   { method: setModel(Cart), only: ['show'] },
   { method: setModel(Cart, { forUser: true }), only: ['update', 'destroy'] }
 ] })

@@ -2,7 +2,7 @@
 
 API="http://localhost:4741"
 URL_PATH="/carts"
-TOKEN="DBMQnDlPwOPrVSXcE5Rn32l9vjrxJVCKm6GG+U2/Obs=--EPq524lCe2brHiKlyJ8ScpXz6+XOrgBp5Z8q2IJ2IfA="
+TOKEN="+8cPPtBogqsKnrAonjNTXx+7YR71xRr5BioTMEYTtpg=--cbDbL32ZpSeeqqMaqjoWxbyLWR5qYcbrYkrXN2NV2ZY="
 OWNERID="591a1170519ff5b86f9182a7"
 
 curl "${API}${URL_PATH}" \
