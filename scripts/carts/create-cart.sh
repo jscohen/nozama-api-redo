@@ -2,8 +2,8 @@
 
 API="http://localhost:4741"
 URL_PATH="/carts"
-TOKEN="JRTlRdXvpbQUr0P3FgO/gEkYSggYe58kFborRScJP94=--1txx5/m7oJ6lRWpeKMxVGDaNQPdxrm6pcDR2ttvcafg="
-OWNERID="591c546ede82881d5aee02af"
+TOKEN="uGjI/+w/DM0HQlIGE3HziAXjRt5eyKMJqH0/tsW4bX4=--3fKA+WKL60aA7g0yAXG7ota8O0+wVKHiBIDD5sx1960="
+OWNERID="591de455d9e65d72ad095f38"
 
 curl "${API}${URL_PATH}" \
   --include \

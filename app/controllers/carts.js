@@ -54,13 +54,14 @@ const update = (req, res, next) => {
     req.cart.update({'$pull': {products: req.body.cart.products[0]}, '$set': {'totalPrice': req.body.cart.totalPrice}})
       .then((carts) => res.sendStatus(204))
       .catch(next)
+  } else if (req.headers.action === 'changeQuantity') {
+    const sku = (req.body.cart.products[0].sku)
+    req.cart.update({'$pull': {products: {sku: req.body.cart.products[0].sku}}})
+    .then(req.cart.update({'$push': {products: req.body.cart.products[0]}})
+    .then(res.sendStatus(201))
+    .catch(next))
   }
-  // const sku = (req.body.cart.products[0].sku)
-  // req.cart.update({'products.sku': {'$eq': sku}}, {'$set': {'products.$.quantity': req.body.cart.products[0].quantity}})
-  // .then(() => res.sendStatus(200))
-  // .catch(next)
 }
-
 const destroy = (req, res, next) => {
   req.cart.remove()
     .then(() => res.sendStatus(204))

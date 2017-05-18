@@ -2,15 +2,15 @@
 
 API="http://localhost:4741"
 URL_PATH="/carts"
-TOKEN="JRTlRdXvpbQUr0P3FgO/gEkYSggYe58kFborRScJP94=--1txx5/m7oJ6lRWpeKMxVGDaNQPdxrm6pcDR2ttvcafg="
-ID="591db0f881e8605dce5f85ed"
+TOKEN="uGjI/+w/DM0HQlIGE3HziAXjRt5eyKMJqH0/tsW4bX4=--3fKA+WKL60aA7g0yAXG7ota8O0+wVKHiBIDD5sx1960="
+ID="591e005c94ae06814dac59da"
 
 curl "${API}${URL_PATH}/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
-  --header "Action: updatePrice" \
+  --header "Action: changeQuantity" \
   --data '{
     "cart": {
       "totalPrice": "50",
