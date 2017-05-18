@@ -26,8 +26,10 @@ const show = (req, res) => {
 }
 
 const create = (req, res, next) => {
-  const paymentToken = req.headers.paymentToken
+  const paymentToken = req.header('paymentToken')
   const totalPrice = req.body.order.totalPrice
+  console.log("creating order");
+  console.log("XXXX PAYMENT TOKEN IS", paymentToken);
   stripe(totalPrice, paymentToken)
   const order = Object.assign(req.body.order, {
     _owner: req.user._id
