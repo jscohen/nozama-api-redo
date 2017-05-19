@@ -4,11 +4,11 @@
 
 # URLs
 - Client
-  - Repo:
-  - Deployed:
+  - Repo: https://github.com/pining-for-fjord/nozama-client
+  - Deployed: https://pining-for-fjord.github.io/nozama-client/
 - Backend (API)
-  - Repo:
-  - Deployed:
+  - Repo: https://github.com/pining-for-fjord/nozama-api
+  - Deployed: https://salty-journey-97556.herokuapp.com/sign-in
 
 ## Dependencies
 
@@ -39,6 +39,7 @@ Fix any conflicts.
 In order to make requests from your deployed client application, you will need
 to set `CLIENT_ORIGIN` in the environment (e.g. `heroku config:set
 CLIENT_ORIGIN=https://<github-username>.github.io`).
+1. Add STRIPE_SECRET_KEY using the SK for your personal stripe account
 
 ## Structure
 
@@ -260,6 +261,31 @@ Content-Type: application/json; charset=utf-8
   }
 }
 ```
+
+### Products
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| GET    | `/products`            | `products#index`  |
+| GET    | `/products/1`          | `products#show`   |
+
+### Carts
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| GET    | `/carts`               | `carts#index`     |
+| GET    | `/carts/1`             | `carts#show`      |
+| POST   | `/carts`               | `carts#create`    |
+| DELETE | `/carts/1`             | `carts#destroy`   |
+| UPDATE | `/carts/1`             | `carts#update`    |
+
+### Orders
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| GET    | `/orders`              | `orders#index`    |
+| GET    | `/orders/1`            | `orders#show`     |
+| POST   | `/orders/`             | `orders#create`   |
 
 ## [License](LICENSE)
 
