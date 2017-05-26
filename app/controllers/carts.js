@@ -40,12 +40,12 @@ const create = (req, res, next) => {
 const update = (req, res, next) => {
   delete req.body._owner  // disallow owner reassignment.
 
-  for (let i = 0; i < req.cart.products.length; i++) {
-    if (lodash.isEqual(req.cart.products[i].sku, req.body.cart.products[0].sku) && req.headers.action === 'add') {
-      res.sendStatus(404)
-      return
-    }
-  }
+  // for (let i = 0; i < req.cart.products.length; i++) {
+  //   if (lodash.isEqual(req.cart.products[i].sku, req.body.cart.products[0].sku) && req.headers.action === 'add') {
+  //     res.sendStatus(404)
+  //     return
+  //   }
+  // }
   if (req.headers.action === 'add') {
     req.cart.update({'$push': {products: req.body.cart.products[0]}, '$set': {'totalPrice': req.body.cart.totalPrice}})
       .then((carts) => res.sendStatus(201))
@@ -59,6 +59,7 @@ const update = (req, res, next) => {
     req.cart.update({'$pull': {products: {sku: req.body.cart.products[0].sku}}})
     .then(req.cart.update({'$push': {products: req.body.cart.products[0]}})
     .then(res.sendStatus(201))
+    .then(console.log(req.body.cart))
     .catch(next))
   }
 }
