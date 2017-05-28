@@ -56,11 +56,15 @@ const update = (req, res, next) => {
       .catch(next)
   } else if (req.headers.action === 'changeQuantity') {
     const sku = (req.body.cart.products[0].sku)
-    req.cart.update({'$pull': {products: {sku: req.body.cart.products[0].sku}}})
-    .then(req.cart.update({'$push': {products: req.body.cart.products[0]}})
-    .then(res.sendStatus(201))
-    .then(console.log(req.body.cart))
-    .catch(next))
+    // console.log(req.body.cart.products[0])
+    // console.log(req.cart)
+    req.cart.update({'$pull': {products: {_id: req.body.cart.products[0]._id}}})
+    .then(console.log(req.cart))
+    .then(req.cart.update({'$push': {products: req.body.cart.products[0]}})).then(
+    res.json({
+      cart: req.cart.toJSON({ user: req.user })
+    }))
+    console.log(req.cart)
   }
 }
 const destroy = (req, res, next) => {
