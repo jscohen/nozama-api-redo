@@ -1,8 +1,8 @@
 #!/bin/bash
 API="http://localhost:4741"
 URL_PATH="/sign-in"
-EMAIL="m@m.com"
-PASSWORD="m"
+EMAIL="jscone@jon"
+PASSWORD="j"
 
 curl "${API}${URL_PATH}" \
   --include \

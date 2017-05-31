@@ -2,10 +2,9 @@
 
 API="http://localhost:4741"
 URL_PATH="/addresses"
-TOKEN="9z2Y4gak8wl5AmRuSG7mx5jwAewQYuGZrwLTkM27phs=--MZ/cvtlLoQ4GfYieqc/kiqhCzVyeSZadLeu4QepknOg="
-ID="592f1ed871aa12119f7a7250"
+TOKEN="EQaq6rRtXxs80C3llrrltviJtAnX2s/uOU46C3YRH6M=--+rSdC+aku4wmmPVfMP2xnr8I/TFAB2L5NPXT0rHzlIc="
 
-curl "${API}${URL_PATH}/${ID}" \
+curl "${API}${URL_PATH}" \
   --include \
   --request GET \
   --header "Content-Type: application/json" \
