@@ -9,8 +9,16 @@ const setUser = require('./concerns/set-current-user')
 const setModel = require('./concerns/set-mongoose-model')
 
 const show = (req, res) => {
-  console.log(req.body.address)
-  console.log(req.address)
+  console.log(req.user.id)
+  console.log(req.address._owner)
+  const userId = req.user.id.toString()
+  const addressOwner = req.address._owner.toString()
+  if (userId !== addressOwner) {
+    console.log('its not equal')
+    res.sendStatus(204)
+    return false
+  }
+
   res.json({
     address: req.address.toJSON({ user: req.user })
   })

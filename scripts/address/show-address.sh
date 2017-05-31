@@ -2,8 +2,8 @@
 
 API="http://localhost:4741"
 URL_PATH="/addresses"
-TOKEN="B40GTMYQIh+Yxa9RkHBCX/LjrhgCiWO0ljO2PF1QyGI=--MMwrGD4h0w4SsjkwskfiCnmmZyAGwcozj0ZAs1E4FpQ="
-ID="592f143dedfec5303d785c90"
+TOKEN="9z2Y4gak8wl5AmRuSG7mx5jwAewQYuGZrwLTkM27phs=--MZ/cvtlLoQ4GfYieqc/kiqhCzVyeSZadLeu4QepknOg="
+ID="592f1ed871aa12119f7a7250"
 
 curl "${API}${URL_PATH}/${ID}" \
   --include \

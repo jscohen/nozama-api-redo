@@ -2,7 +2,7 @@
 
 API="http://localhost:4741"
 URL_PATH="/addresses"
-TOKEN="9zs4WUxy90VElCN2m2ynb00Z81NBZwbieYDouKH4REA=--7Voi2hC/cbuYxllRgh3pPVmRkQIfQu7cSTp8rC38U/0="
+TOKEN="CjECYQOM9sab//PdlCUmxIGw7VP0FHiUGNKlGssdNiw=--h1E5DrKTwj8RVnlCiD4sW8/TwGTcrBXO8m4rnCXrADQ="
 
 curl "${API}${URL_PATH}" \
   --include \
