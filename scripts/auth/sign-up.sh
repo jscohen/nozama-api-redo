@@ -2,8 +2,8 @@
 
 API="http://localhost:4741"
 URL_PATH="/sign-up"
-EMAIL="deedee.forte@yahoo.com"
-PASSWORD="gosox"
+EMAIL="jsc@jon"
+PASSWORD="j"
 
 curl "${API}${URL_PATH}" \
   --include \
