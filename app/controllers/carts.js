@@ -58,15 +58,21 @@ const update = (req, res, next) => {
     // const sku = (req.body.cart.products[0].sku)
     // console.log(req.body.cart.products[0])
     // console.log(req.cart)
-    console.log(req.body.cart)
-    req.cart.update({'$pull': {products: {sku: req.body.cart.products[0].sku}}})
-    .then(req.cart.update({'$push': {products: req.body.cart.products[0]}}))
-    .then(res.status(201)
-            .json({
-              cart: req.cart.toJSON({ user: req.user })
-            }))
+    // req.cart.update({'$pull': {products: {sku: req.body.cart.products[0].sku}}})
+    // .then(() => req.cart.update({'$push': {products: req.body.cart.products[0]}}))
+    // .then(res.status(201)
+    //         .json({
+    //           cart: req.cart.toJSON({ user: req.user })
+    //         }))
+    // .catch(next)
+    delete req.body._owner  // disallow owner reassignment.
+    req.cart.update(req.body.cart)
+    .then((cart) =>
+      res.status(201)
+        .json({
+          cart: req.cart.toJSON({ user: req.user })
+        }))
     .catch(next)
-    console.log(req.cart)
   }
 }
 const destroy = (req, res, next) => {

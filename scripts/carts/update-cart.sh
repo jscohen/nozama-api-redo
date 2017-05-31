@@ -2,8 +2,8 @@
 
 API="http://localhost:4741"
 URL_PATH="/carts"
-TOKEN="7PjtlC2jNTwe5pxlV9o/RzSgGfF79qKLC4mk/DteBPg=--kmWkO75Qvk+62OPSY4EnHM7eDidvvzGGsZnkpPkqWcQ="
-ID="592ed1b68d606f16fba051af"
+TOKEN="bALpM5A3mDmL3DHmz+b7nlEm7wtL2o5/1iS/peqp6E8=--orN1D2tmcu29isZ4/IcvNjeE2Ec+WWofCxdjryskLbU="
+ID="592ef22a54bd0424b1d8efce"
 
 curl "${API}${URL_PATH}/${ID}" \
   --include \
@@ -16,7 +16,7 @@ curl "${API}${URL_PATH}/${ID}" \
       "totalPrice": "15",
       "products": [{
         "sku": "5",
-        "quantity": "3",
+        "quantity": "3000",
         "name": "Book",
         "price": "5"
       }]
