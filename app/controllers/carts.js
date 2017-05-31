@@ -55,15 +55,17 @@ const update = (req, res, next) => {
       .then((carts) => res.sendStatus(204))
       .catch(next)
   } else if (req.headers.action === 'changeQuantity') {
-    const sku = (req.body.cart.products[0].sku)
+    // const sku = (req.body.cart.products[0].sku)
     // console.log(req.body.cart.products[0])
     // console.log(req.cart)
-    req.cart.update({'$pull': {products: {_id: req.body.cart.products[0]._id}}})
-    .then(console.log(req.cart))
-    .then(req.cart.update({'$push': {products: req.body.cart.products[0]}})).then(
-    res.json({
-      cart: req.cart.toJSON({ user: req.user })
-    }))
+    console.log(req.body.cart)
+    req.cart.update({'$pull': {products: {sku: req.body.cart.products[0].sku}}})
+    .then(req.cart.update({'$push': {products: req.body.cart.products[0]}}))
+    .then(res.status(201)
+            .json({
+              cart: req.cart.toJSON({ user: req.user })
+            }))
+    .catch(next)
     console.log(req.cart)
   }
 }

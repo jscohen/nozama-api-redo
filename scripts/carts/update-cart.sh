@@ -2,8 +2,8 @@
 
 API="http://localhost:4741"
 URL_PATH="/carts"
-TOKEN="uGjI/+w/DM0HQlIGE3HziAXjRt5eyKMJqH0/tsW4bX4=--3fKA+WKL60aA7g0yAXG7ota8O0+wVKHiBIDD5sx1960="
-ID="591e005c94ae06814dac59da"
+TOKEN="7PjtlC2jNTwe5pxlV9o/RzSgGfF79qKLC4mk/DteBPg=--kmWkO75Qvk+62OPSY4EnHM7eDidvvzGGsZnkpPkqWcQ="
+ID="592ed1b68d606f16fba051af"
 
 curl "${API}${URL_PATH}/${ID}" \
   --include \
@@ -13,7 +13,7 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Action: changeQuantity" \
   --data '{
     "cart": {
-      "totalPrice": "50",
+      "totalPrice": "15",
       "products": [{
         "sku": "5",
         "quantity": "3",
