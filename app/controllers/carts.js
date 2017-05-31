@@ -65,13 +65,11 @@ const update = (req, res, next) => {
     //           cart: req.cart.toJSON({ user: req.user })
     //         }))
     // .catch(next)
-    delete req.body._owner  // disallow owner reassignment.
+    // delete req.body._owner  // disallow owner reassignment.
+    console.log(req.cart)
+    console.log(req.body)
     req.cart.update(req.body.cart)
-    .then((cart) =>
-      res.status(201)
-        .json({
-          cart: req.cart.toJSON({ user: req.user })
-        }))
+    .then((carts) => res.sendStatus(201))
     .catch(next)
   }
 }
