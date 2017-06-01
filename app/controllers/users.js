@@ -59,6 +59,7 @@ const signup = (req, res, next) => {
 }
 
 const signin = (req, res, next) => {
+  console.log(req.body)
   const credentials = req.body.credentials
   const search = { email: credentials.email }
   User.findOne(search)
@@ -75,6 +76,7 @@ const signin = (req, res, next) => {
       delete user.passwordDigest
       user.token = encodeToken(user.token)
       res.json({ user })
+      console.log('inside sign in')
     })
     .catch(makeErrorHandler(res, next))
 }
