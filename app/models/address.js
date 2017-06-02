@@ -20,7 +20,7 @@ const addressSchema = new mongoose.Schema({
     type: String
   },
   zip: {
-    type: Number
+    type: String
   },
   country: {
     type: String
